@@ -27,7 +27,7 @@ type Configuration struct {
 }
 
 const (
-	defaultThemesRepository = "raw.githubusercontent.com/sufry/postmanerator/master/.gitmodules"
+	defaultThemesRepository = "https://raw.githubusercontent.com/sufry/postmanerator/master/.gitmodules"
 	postmaneratorPathEnv    = "POSTMANERATOR_PATH"
 	homeEnv                 = "HOME"
 	userProfileEnv          = "USERPROFILE"

@@ -68,7 +68,6 @@ func (p *CollectionV210Parser) computeItem(parentFolder *Folder, items []collect
 				PayloadParams: p.parseRequestPayloadParams(item),
 				Headers:       p.parseRequestHeaders(item, options),
 				Responses:     p.parseRequestResponses(item, options),
-				Auth:          item.Request.Auth,
 				AuthParams:    p.parseRequestAuthParams(item),
 			}
 			parentFolder.Requests = append(parentFolder.Requests, request)

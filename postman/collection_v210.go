@@ -15,7 +15,12 @@ type collectionV210Item struct {
 	Event       []collectionV210Event `json:"event"`
 	Item        []collectionV210Item  `json:"item"`
 	Request     *struct {
-		Auth   []collectionV210Auth         `json:"auth,omitempty"`
+		Auth struct {
+			Type   string                       `json:"type"`
+			Basic  []collectionV210KeyValuePair `json:"basic,omitempty"`
+			Bearer []collectionV210KeyValuePair `json:"bearer,omitempty"`
+			Oauth2 []collectionV210KeyValuePair `json:"oauth2,omitempty"`
+		}
 		Method string                       `json:"method"`
 		Header []collectionV210KeyValuePair `json:"header"`
 		Body   struct {
@@ -53,12 +58,5 @@ type collectionV210KeyValuePair struct {
 	Value       interface{} `json:"value"`
 	Description string      `json:"description,omitempty"`
 	Type        string      `json:"type,omitempty"`
-	Disabled    string      `json:"disabled,omitempty"`
-}
-
-type collectionV210Auth struct {
-	Type   string                       `json:"type"`
-	Basic  []collectionV210KeyValuePair `json:"basic,omitempty"`
-	Bearer []collectionV210KeyValuePair `json:"bearer,omitempty"`
-	Oauth2 []collectionV210KeyValuePair `json:"oauth2,omitempty"`
+	Disabled    bool        `json:"disabled,omitempty"`
 }
