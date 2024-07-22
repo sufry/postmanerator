@@ -4,7 +4,7 @@ import (
 	"io"
 	"text/template"
 
-	"github.com/aubm/postmanerator/postman"
+	"github.com/sufry/postmanerator/postman"
 )
 
 const (

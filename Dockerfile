@@ -16,13 +16,13 @@ RUN apk update \
  && if [ "${verify_ssl}" = "n" ]; \
     then git config --global http.sslVerify "false"; \
     fi \
- && git clone https://github.com/aubm/postmanerator-default-theme.git default \
+ && git clone https://github.com/sufry/postmanerator-default-theme.git default \
  && git clone https://github.com/zanaca/postmanerator-hu-theme.git hu \
- && git clone https://github.com/aubm/postmanerator-markdown-theme.git markdown \
+ && git clone https://github.com/sufry/postmanerator-markdown-theme.git markdown \
  && cd /usr/bin/ \
  && if [ "${verify_ssl}" = "n" ]; \
-    then wget -O postmanerator https://github.com/aubm/postmanerator/releases/download/v0.8.0/postmanerator_linux_386 --no-check-certificate; \
-    else wget -O postmanerator https://github.com/aubm/postmanerator/releases/download/v0.8.0/postmanerator_linux_386; \
+    then wget -O postmanerator https://github.com/sufry/postmanerator/releases/download/v0.8.0/postmanerator_linux_386 --no-check-certificate; \
+    else wget -O postmanerator https://github.com/sufry/postmanerator/releases/download/v0.8.0/postmanerator_linux_386; \
     fi \
  && chmod +x postmanerator
 

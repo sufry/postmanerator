@@ -8,17 +8,17 @@ import (
 	"os"
 	"path"
 
-	. "github.com/aubm/postmanerator/commands"
-	"github.com/aubm/postmanerator/configuration"
-	"github.com/aubm/postmanerator/postman"
-	. "github.com/aubm/postmanerator/postman/mocks"
-	"github.com/aubm/postmanerator/themes"
-	. "github.com/aubm/postmanerator/themes/mocks"
 	"github.com/fatih/color"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 	"github.com/satori/go.uuid"
 	"github.com/stretchr/testify/mock"
+	. "github.com/sufry/postmanerator/commands"
+	"github.com/sufry/postmanerator/configuration"
+	"github.com/sufry/postmanerator/postman"
+	. "github.com/sufry/postmanerator/postman/mocks"
+	"github.com/sufry/postmanerator/themes"
+	. "github.com/sufry/postmanerator/themes/mocks"
 )
 
 const any = mock.Anything

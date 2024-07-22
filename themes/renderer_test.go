@@ -3,10 +3,10 @@ package themes_test
 import (
 	"bytes"
 
-	"github.com/aubm/postmanerator/postman"
-	. "github.com/aubm/postmanerator/themes"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
+	"github.com/sufry/postmanerator/postman"
+	. "github.com/sufry/postmanerator/themes"
 )
 
 var _ = Describe("Renderer", func() {

@@ -7,14 +7,14 @@ import (
 	"os"
 	"path"
 
-	"github.com/aubm/postmanerator/configuration"
-	. "github.com/aubm/postmanerator/themes"
-	"github.com/aubm/postmanerator/utils"
-	. "github.com/aubm/postmanerator/utils/mocks"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 	uuid "github.com/satori/go.uuid"
 	"github.com/stretchr/testify/mock"
+	"github.com/sufry/postmanerator/configuration"
+	. "github.com/sufry/postmanerator/themes"
+	"github.com/sufry/postmanerator/utils"
+	. "github.com/sufry/postmanerator/utils/mocks"
 )
 
 const any = mock.Anything
@@ -269,7 +269,7 @@ var _ = Describe("Manager", func() {
 				It("should clone the repository with the default local name", func() {
 					Expect(len(mockCloner.Calls)).To(Equal(1))
 					args := mockCloner.Calls[0].Arguments
-					Expect(args.Get(0)).To(Equal([]string{"https://github.com/aubm/postmanerator-default-theme.git", "default"}))
+					Expect(args.Get(0)).To(Equal([]string{"https://github.com/sufry/postmanerator-default-theme.git", "default"}))
 					Expect(args.Get(1)).To(Equal(utils.CloneOptions{TargetDirectory: usedConfig.ThemesDirectory}))
 				})
 
@@ -292,7 +292,7 @@ var _ = Describe("Manager", func() {
 				It("should clone the repository with the default local name", func() {
 					Expect(len(mockCloner.Calls)).To(Equal(1))
 					args := mockCloner.Calls[0].Arguments
-					Expect(args.Get(0)).To(Equal([]string{"https://github.com/aubm/postmanerator-default-theme.git", "default"}))
+					Expect(args.Get(0)).To(Equal([]string{"https://github.com/sufry/postmanerator-default-theme.git", "default"}))
 					Expect(args.Get(1)).To(Equal(utils.CloneOptions{TargetDirectory: usedConfig.ThemesDirectory}))
 				})
 

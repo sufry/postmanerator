@@ -68,6 +68,8 @@ func (p *CollectionV210Parser) computeItem(parentFolder *Folder, items []collect
 				PayloadParams: p.parseRequestPayloadParams(item),
 				Headers:       p.parseRequestHeaders(item, options),
 				Responses:     p.parseRequestResponses(item, options),
+				Auth:          item.Request.Auth,
+				AuthParams:    p.parseRequestAuthParams(item),
 			}
 			parentFolder.Requests = append(parentFolder.Requests, request)
 		}
@@ -185,4 +187,28 @@ func containsString(target []string, symbol string) bool {
 		}
 	}
 	return false
+}
+
+func (p *CollectionV210Parser) parseRequestAuthParams(item collectionV210Item) []KeyValuePair {
+	payloadParams := make([]KeyValuePair, 0)
+
+	keyValuePairCollection := make([]collectionV210KeyValuePair, 0)
+	switch item.Request.Auth.Type {
+	case "basic":
+		keyValuePairCollection = item.Request.Auth.Basic
+	case "bearer":
+		keyValuePairCollection = item.Request.Auth.Bearer
+	case "oauth2":
+		keyValuePairCollection = item.Request.Auth.Oauth2
+	}
+
+	for _, pair := range keyValuePairCollection {
+		payloadParams = append(payloadParams, KeyValuePair{
+			Key:   pair.Key,
+			Value: pair.Value,
+			Type:  pair.Type,
+		})
+	}
+
+	return payloadParams
 }

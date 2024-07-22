@@ -1,8 +1,8 @@
 package mocks_test
 
 import (
-	. "github.com/aubm/postmanerator/postman"
 	"github.com/stretchr/testify/mock"
+	. "github.com/sufry/postmanerator/postman"
 )
 
 type MockCollectionBuilder struct {

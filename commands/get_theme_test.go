@@ -4,13 +4,13 @@ import (
 	"bytes"
 	"errors"
 
-	. "github.com/aubm/postmanerator/commands"
-	"github.com/aubm/postmanerator/configuration"
-	. "github.com/aubm/postmanerator/themes/mocks"
 	"github.com/fatih/color"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 	"github.com/stretchr/testify/mock"
+	. "github.com/sufry/postmanerator/commands"
+	"github.com/sufry/postmanerator/configuration"
+	. "github.com/sufry/postmanerator/themes/mocks"
 )
 
 var _ = Describe("GetTheme", func() {

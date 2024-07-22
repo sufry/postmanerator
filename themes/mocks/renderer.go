@@ -3,9 +3,9 @@ package mocks_test
 import (
 	"io"
 
-	"github.com/aubm/postmanerator/postman"
-	. "github.com/aubm/postmanerator/themes"
 	"github.com/stretchr/testify/mock"
+	"github.com/sufry/postmanerator/postman"
+	. "github.com/sufry/postmanerator/themes"
 )
 
 type MockThemeRenderer struct {

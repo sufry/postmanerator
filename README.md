@@ -8,7 +8,7 @@ Some guy said:
 
 Well guess what some guy, now you can use Postmanerator to do so! Can I?
 
-Just download the [latest release on Github](https://github.com/aubm/postmanerator/releases/latest). You obviously need to pick the right binary depending on your environment. Then place that binary somewhere in your system that is in your PATH, you might want to rename it to simply `postmanerator`.
+Just download the [latest release on Github](https://github.com/sufry/postmanerator/releases/latest). You obviously need to pick the right binary depending on your environment. Then place that binary somewhere in your system that is in your PATH, you might want to rename it to simply `postmanerator`.
 
 Afterwards, export your Postman collection, let's say in `$YOUR_PROJECT/postman/collection.json` and simply run:
 
@@ -47,7 +47,7 @@ Use the `-environment=/path/to/environment.json` option to provide the environme
 ### Provide a theme
 
 By default, Postmanerator will use its `default` theme, but you can change it by using the `-theme=theme_name` option.
-You can either provide a theme name from the [official themes repository](https://github.com/aubm/postmanerator-themes), or a full local path to theme folder.
+You can either provide a theme name from the [official themes repository](https://github.com/sufry/postmanerator-themes), or a full local path to theme folder.
 
 ### Provide the output
 
@@ -108,13 +108,13 @@ The list of available themes will be printed out to the standard output. By defa
 ### Download new themes
 
 By now, you probably only have the `default` theme available, the `postmanerator themes get` command allows you download a new existing theme.
-You can either specify the name of one of the themes that are indexed in the [official themes repository](https://github.com/aubm/postmanerator-themes), or either specify a full URL pointing to git repository. Moreover the `-theme-local-name` option allows you to change the name of your local copy of the theme. Please see the following examples.
+You can either specify the name of one of the themes that are indexed in the [official themes repository](https://github.com/sufry/postmanerator-themes), or either specify a full URL pointing to git repository. Moreover the `-theme-local-name` option allows you to change the name of your local copy of the theme. Please see the following examples.
 
 ```bash
 postmanerator themes get markdown # will down the theme 'markdown' and copy it under your local themes directory in a folder named 'markdown'
 postmanerator -theme-local-name="my-markdown" themes get markdown # will down the theme 'markdown' and copy it under your local themes directory in a folder named 'my-markdown'
-postmanerator themes get https://github.com/aubm/postmanerator-markdown-theme.git # will clone the given repository under your local themes directory, in a folder named 'postmanerator-markdown-theme'
-postmanerator -theme-local-name="markdown" themes get https://github.com/aubm/postmanerator-markdown-theme.git # will clone the given repository under your local themes directory, in a folder named 'markdown'
+postmanerator themes get https://github.com/sufry/postmanerator-markdown-theme.git # will clone the given repository under your local themes directory, in a folder named 'postmanerator-markdown-theme'
+postmanerator -theme-local-name="markdown" themes get https://github.com/sufry/postmanerator-markdown-theme.git # will clone the given repository under your local themes directory, in a folder named 'markdown'
 ```
 
 ### Delete a theme
@@ -233,12 +233,12 @@ As a workaround, Postmanerator provides the `hasContent` helper which can be use
 
 ## Installation
 
-As said in the introduction, the easiest way to get it installed for now is to download the latest appropriate [release on Github](https://github.com/aubm/postmanerator/releases/latest), depending on your system. Then copy it somewhere in your PATH, renaming it to `postmanerator`.
+As said in the introduction, the easiest way to get it installed for now is to download the latest appropriate [release on Github](https://github.com/sufry/postmanerator/releases/latest), depending on your system. Then copy it somewhere in your PATH, renaming it to `postmanerator`.
 
 Alternatively, you can download the source code and compile it by hand. The Go programming language has to be installed on your machine for that.
 
 - Follow the instructions to [get the latest version of Golang installed](https://golang.org/doc/install) on your machine
-- Download Postmanerator using go get: `go get github.com/aubm/postmanerator`
+- Download Postmanerator using go get: `go get github.com/sufry/postmanerator`
 - Finally, generate the binary with `go install`
 
 There is also a community maintained docker image available, simply run:

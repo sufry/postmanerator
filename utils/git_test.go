@@ -5,7 +5,7 @@ import (
 	"os"
 	"path"
 
-	. "github.com/aubm/postmanerator/utils"
+	. "github.com/sufry/postmanerator/utils"
 
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
@@ -47,7 +47,7 @@ var _ = Describe("Git", func() {
 		Context("when everything is ok", func() {
 
 			BeforeEach(func() {
-				cloneArgsToUse = []string{"https://github.com/aubm/postmanerator-default-theme", "default"}
+				cloneArgsToUse = []string{"https://github.com/sufry/postmanerator-default-theme", "default"}
 			})
 
 			It("should not return an error", func() {

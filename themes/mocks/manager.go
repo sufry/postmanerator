@@ -1,8 +1,8 @@
 package mocks_test
 
 import (
-	. "github.com/aubm/postmanerator/themes"
 	"github.com/stretchr/testify/mock"
+	. "github.com/sufry/postmanerator/themes"
 )
 
 type MockThemeManager struct {
