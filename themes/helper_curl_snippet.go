@@ -22,7 +22,9 @@ func curlSnippet(request postman.Request) string {
 	}
 
 	for _, header := range request.Headers {
-		curlSnippet += fmt.Sprintf(` -H "%v: %v"`, header.Name, header.Value)
+		if !header.Disabled {
+			curlSnippet += fmt.Sprintf(` -H "%v: %v"`, header.Name, header.Value)
+		}
 	}
 
 	if payloadReady.MatchString(request.Method) {

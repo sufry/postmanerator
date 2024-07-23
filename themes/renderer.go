@@ -2,6 +2,7 @@ package themes
 
 import (
 	"io"
+	"strings"
 	"text/template"
 
 	"github.com/sufry/postmanerator/postman"
@@ -32,5 +33,8 @@ func (r *Renderer) getTemplateHelpers() template.FuncMap {
 		"inline":       helperInline,
 		"markdown":     helperMarkdown,
 		"slugify":      helperSlugify,
+		"ToTitle":      strings.ToTitle,
+		"ToUpper":      strings.ToUpper,
+		"methodColor":  helperMethod,
 	}
 }

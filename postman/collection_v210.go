@@ -19,7 +19,6 @@ type collectionV210Item struct {
 			Type   string                       `json:"type"`
 			Basic  []collectionV210KeyValuePair `json:"basic,omitempty"`
 			Bearer []collectionV210KeyValuePair `json:"bearer,omitempty"`
-			Oauth2 []collectionV210KeyValuePair `json:"oauth2,omitempty"`
 		}
 		Method string                       `json:"method"`
 		Header []collectionV210KeyValuePair `json:"header"`

@@ -3,6 +3,7 @@ package postman
 import (
 	"encoding/json"
 	"fmt"
+	"sort"
 	"strings"
 
 	uuid "github.com/satori/go.uuid"
@@ -68,6 +69,7 @@ func (p *CollectionV210Parser) computeItem(parentFolder *Folder, items []collect
 				PayloadParams: p.parseRequestPayloadParams(item),
 				Headers:       p.parseRequestHeaders(item, options),
 				Responses:     p.parseRequestResponses(item, options),
+				Auth:          item.Request.Auth.Type,
 				AuthParams:    p.parseRequestAuthParams(item),
 			}
 			parentFolder.Requests = append(parentFolder.Requests, request)
@@ -139,6 +141,7 @@ func (p *CollectionV210Parser) parseRequestHeaders(item collectionV210Item, opti
 			Key:         header.Key,
 			Value:       header.Value,
 			Description: header.Description,
+			Disabled:    header.Disabled,
 		})
 	}
 
@@ -174,6 +177,7 @@ func (p *CollectionV210Parser) parseResponseHeaders(headers []collectionV210KeyV
 			Key:         header.Key,
 			Value:       header.Value,
 			Description: header.Description,
+			Disabled:    header.Disabled,
 		})
 	}
 	return parsedHeaders
@@ -197,8 +201,6 @@ func (p *CollectionV210Parser) parseRequestAuthParams(item collectionV210Item) [
 		keyValuePairCollection = item.Request.Auth.Basic
 	case "bearer":
 		keyValuePairCollection = item.Request.Auth.Bearer
-	case "oauth2":
-		keyValuePairCollection = item.Request.Auth.Oauth2
 	}
 
 	for _, pair := range keyValuePairCollection {
@@ -206,6 +208,10 @@ func (p *CollectionV210Parser) parseRequestAuthParams(item collectionV210Item) [
 			Key:   pair.Key,
 			Value: pair.Value,
 			Type:  pair.Type,
+		})
+
+		sort.SliceStable(payloadParams, func(i, j int) bool {
+			return payloadParams[i].Key > payloadParams[j].Key
 		})
 	}
 

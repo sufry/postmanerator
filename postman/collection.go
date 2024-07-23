@@ -21,7 +21,7 @@ type Request struct {
 	Headers       []KeyValuePair
 	Responses     []Response
 	Tests         string
-	Auth          []collectionV210Auth
+	Auth          string
 	AuthParams    []KeyValuePair
 }
 
@@ -62,11 +62,4 @@ type KeyValuePair struct {
 	Source      string
 	Type        string
 	Disabled    bool
-}
-
-type collectionV210Auth struct {
-	Type   string
-	Basic  []collectionV210KeyValuePair
-	Bearer []collectionV210KeyValuePair
-	Oauth2 []collectionV210KeyValuePair
 }

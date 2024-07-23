@@ -20,7 +20,9 @@ func helperHttpSnippet(request postman.Request) (httpSnippet string) {
 Host: %v`, request.Method, parsedURL.RequestURI(), parsedURL.Host)
 
 	for _, header := range request.Headers {
-		httpSnippet += fmt.Sprintf("\n%v: %v", header.Name, header.Value)
+		if !header.Disabled {
+			httpSnippet += fmt.Sprintf("\n%v: %v", header.Name, header.Value)
+		}
 	}
 
 	if ok, _ := regexp.MatchString("POST|PUT|PATCH|DELETE", request.Method); ok == false {
