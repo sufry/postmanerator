@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/aubm/postmanerator.svg?branch=master)](https://travis-ci.org/aubm/postmanerator) [![Coverage Status](https://coveralls.io/repos/github/aubm/postmanerator/badge.svg?branch=master)](https://coveralls.io/github/aubm/postmanerator?branch=master)
+[![Build Status](https://travis-ci.org/sufry/postmanerator.svg?branch=master)](https://travis-ci.org/sufry/postmanerator) [![Coverage Status](https://coveralls.io/repos/github/sufry/postmanerator/badge.svg?branch=master)](https://coveralls.io/github/sufry/postmanerator?branch=master)
 
 ## What is it?
 
